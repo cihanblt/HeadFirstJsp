@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" %>
+	<%@ page isELIgnored="false" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,14 +8,22 @@
 <title>Insert title here</title>
 </head>
 <body>
-şimdi yarın
-<% 
+	şimdi yarın
+	<% 
 
 	out.println((String)request.getAttribute("wop"));
 	out.println((String)request.getAttribute("email"));
 	request.setAttribute("say", "say");
 %>
-
-{say}
+	<br />
+	${pageContext.request}
+	<br />
+	${header["host"]}
+	<br />
+	${pageContext.request.remoteAddr}
+	<br />
+	${wop}
+	<br />
+	${2+3+4}
 </body>
 </html>
